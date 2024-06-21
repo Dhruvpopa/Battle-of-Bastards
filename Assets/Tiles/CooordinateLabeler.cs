@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
-[ExecuteAlways] 
-
+[ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
@@ -13,18 +11,19 @@ public class CoordinateLabeler : MonoBehaviour
 
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
-    WayPoint wayPoint;
+    WayPoint waypoint;
 
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
         label.enabled = false;
-        wayPoint = GetComponentInParent<WayPoint>();
+
+        waypoint = GetComponentInParent<WayPoint>();
         DisplayCoordinates();
     }
+
     void Update()
     {
-
         if (!Application.isPlaying)
         {
             DisplayCoordinates();
@@ -45,7 +44,7 @@ public class CoordinateLabeler : MonoBehaviour
 
     void ColorCoordinates()
     {
-        if (wayPoint.IsPlaceable)
+        if (waypoint.IsPlaceable)
         {
             label.color = defaultColor;
         }
@@ -59,6 +58,7 @@ public class CoordinateLabeler : MonoBehaviour
     {
         coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
         coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+
         label.text = coordinates.x + "," + coordinates.y;
     }
 
@@ -67,3 +67,4 @@ public class CoordinateLabeler : MonoBehaviour
         transform.parent.name = coordinates.ToString();
     }
 }
+
