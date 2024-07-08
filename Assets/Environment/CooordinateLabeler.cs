@@ -35,7 +35,7 @@ public class CoordinateLabeler : MonoBehaviour
             DisplayCoordinates();
             UpdateObjectName();
         }
-        //label.enabled = true;
+        label.enabled = true;
         SetLabelColor();
         ToggleLabels();
     }
@@ -50,19 +50,29 @@ public class CoordinateLabeler : MonoBehaviour
 
     void SetLabelColor()
     {
-        if(gridManager == null) { return; }
+        if (gridManager == null) { return; }
 
         Node node = gridManager.GetNode(coordinates);
+
         if (node == null) { return; }
 
         if (!node.isWalkable)
         {
             label.color = blockedColor;
         }
+        else if (node.isPath)
+        {
+            label.color = pathColor;
+        }
+        else if (node.isExplored)
+        {
+            label.color = exploredColor;
+        }
+        else
+        {
+            label.color = defaultColor;
+        }
 
-        else if(node.isPath) { label.color = pathColor; }
-        else if(node.isExplored) { label.color = exploredColor; }
-        else { label.color = defaultColor; }
 
         //if (waypoint.IsPlaceable)
         //{
