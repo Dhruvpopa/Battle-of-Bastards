@@ -86,9 +86,10 @@ public class CoordinateLabeler : MonoBehaviour
 
     void DisplayCoordinates()
     {
+        if (gridManager == null) { return; }
 //#if UNITY_EDITOR
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize);
 //#endif
 
 

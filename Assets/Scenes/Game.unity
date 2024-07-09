@@ -13006,7 +13006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84861c22e9212414193c872f992b5e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 11, y: 11}
+  gridSize: {x: 10, y: 10}
+  unityGridSize: 10
 --- !u!4 &1130877154
 Transform:
   m_ObjectHideFlags: 0
@@ -22896,6 +22897,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: startCoordinates.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: startCoordinates.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: destinateCoordinates.x
       value: 3
       objectReference: {fileID: 0}
@@ -22905,11 +22914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: destinationCoordinates.x
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: destinationCoordinates.y
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6669435404291565730, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: m_Name
@@ -22953,6 +22962,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8056732865638854258, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284911206125600605, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: poolSize
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8284911206125600605, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
