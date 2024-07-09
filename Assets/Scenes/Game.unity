@@ -22895,6 +22895,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: destinateCoordinates.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: destinateCoordinates.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: destinationCoordinates.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816789176580117382, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
+      propertyPath: destinationCoordinates.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6669435404291565730, guid: 0348a1f68760de74fa94c8ac218f827a, type: 3}
       propertyPath: m_Name
       value: ObjectPool
