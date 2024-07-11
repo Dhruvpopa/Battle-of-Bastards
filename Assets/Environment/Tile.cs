@@ -9,32 +9,36 @@ public class Tile : MonoBehaviour
     [SerializeField] bool isPlaceable;
     public bool IsPlaceable { get { return isPlaceable; } }
 
-    GridManager gridMananger;
+    GridManager gridManager;
+    Pathfinder pathfinder;
     Vector2Int coordinates = new Vector2Int();
 
     void Awake()
     {
-        gridMananger = FindObjectOfType<GridManager>();
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
     }
+
     void Start()
     {
-        if(gridMananger != null)
+        if (gridManager != null)
         {
-            coordinates = gridMananger.GetCoordinatesFromPosition(transform.position);
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
 
-            if(!isPlaceable )
+            if (!isPlaceable)
             {
-                gridMananger.BlockNode(coordinates);
+                gridManager.BlockNode(coordinates);
             }
         }
     }
 
     void OnMouseDown()
     {
-        if (isPlaceable)
+        if (gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
-            bool isPlaced = towerPrefab.CreateTower(towerPrefab,transform.position);
+            bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
             isPlaceable = !isPlaced;
+            gridManager.BlockNode(coordinates);
         }
     }
 }
