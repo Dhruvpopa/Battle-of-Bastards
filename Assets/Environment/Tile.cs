@@ -40,6 +40,7 @@ public class Tile : MonoBehaviour
             if(isSuccessful)
             {
                 gridManager.BlockNode(coordinates);
+                pathfinder.NotifyReceivers();
             }
         }
     }
