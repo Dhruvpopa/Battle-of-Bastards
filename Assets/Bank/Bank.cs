@@ -31,6 +31,10 @@ public class Bank : MonoBehaviour
         {
             ReloadScene();
         }
+        if (currentBalance > 500) 
+        {
+            ReloadScene();
+        }
     }
 
     void UpdateDisplay() 
